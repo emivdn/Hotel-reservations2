@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pojo.Camere" table="camere" catalog="vidinei_lavinia_emilia"
+		optimistic-lock="version">
+		<id name="idcamera" type="java.lang.Integer">
+			<column name="idcamera" />
+			<generator class="identity" />
+		</id>
+		<property name="tipcamera" type="string">
+			<column name="tipcamera" length="45" />
+		</property>
+		<property name="capacitate" type="string">
+			<column name="capacitate" length="60" />
+		</property>
+		<property name="pretnoapte" type="string">
+			<column name="pretnoapte" length="60" />
+		</property>
+		<property name="disponibilitate" type="string">
+			<column name="disponibilitate" length="70" />
+		</property>
+		<property name="facilitati" type="string">
+			<column name="facilitati" length="45" />
+		</property>
+		<property name="dataultimeicuratari" type="string">
+			<column name="dataultimeicuratari" length="60" />
+		</property>
+		<set name="hotels" table="hoteluri" inverse="true"
+			lazy="true" fetch="select">
+			<key>
+				<column name="idcamera" />
+			</key>
+			<one-to-many class="pojo.Hoteluri" />
+		</set>
+	</class>
+</hibernate-mapping>

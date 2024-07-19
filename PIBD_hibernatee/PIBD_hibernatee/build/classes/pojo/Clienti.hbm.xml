@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pojo.Clienti" table="clienti" catalog="vidinei_lavinia_emilia"
+		optimistic-lock="version">
+		<id name="idclient" type="java.lang.Integer">
+			<column name="idclient" />
+			<generator class="identity" />
+		</id>
+		<property name="nume" type="string">
+			<column name="nume" length="45" />
+		</property>
+		<property name="prenume" type="string">
+			<column name="prenume" length="45" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" length="45" />
+		</property>
+		<property name="nrtelefon" type="string">
+			<column name="nrtelefon" length="50" />
+		</property>
+		<property name="datacheckin" type="string">
+			<column name="datacheckin" length="50" />
+		</property>
+		<property name="datacheckout" type="string">
+			<column name="datacheckout" length="50" />
+		</property>
+		<set name="hotels" table="hoteluri" inverse="true"
+			lazy="true" fetch="select">
+			<key>
+				<column name="idclient" />
+			</key>
+			<one-to-many class="pojo.Hoteluri" />
+		</set>
+	</class>
+</hibernate-mapping>

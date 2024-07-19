@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pojo.Hoteluri" table="hoteluri"
+		catalog="vidinei_lavinia_emilia" optimistic-lock="version">
+		<id name="idhotel" type="java.lang.Integer">
+			<column name="idhotel" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="camere" class="pojo.Camere"
+			fetch="select">
+			<column name="idcamera" />
+		</many-to-one>
+		<many-to-one name="clienti" class="pojo.Clienti"
+			fetch="select">
+			<column name="idclient" />
+		</many-to-one>
+		<property name="numehotel" type="string">
+			<column name="numehotel" length="50" />
+		</property>
+		<property name="oras" type="string">
+			<column name="oras" length="45" />
+		</property>
+		<property name="nrstele" type="string">
+			<column name="nrstele" length="45" />
+		</property>
+		<property name="animaledecompanie" type="string">
+			<column name="animaledecompanie" length="50" />
+		</property>
+	</class>
+</hibernate-mapping>
