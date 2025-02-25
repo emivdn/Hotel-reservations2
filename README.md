@@ -5,4 +5,5 @@ Developed  one user-friendly web application for managing the database of a hote
 
 ![image](https://github.com/user-attachments/assets/c119c373-d4ff-4171-87a3-1e1da495372c)
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/8ab64767-8131-4b91-850f-91b1f2e30b1b)
+
